@@ -3,13 +3,12 @@
 yum install -y wget java-1.7.0-openjdk
 yum install -y wget java-1.7.0-openjdk-devel
 #getbigtop
-wget -O /etc/yum.repos.d/bigtop.repo
-http://www.apache.org/dist/bigtop/stable/repos/centos6/bigtop.repo
+wget -O /etc/yum.repos.d/bigtop.repo http://www.apache.org/dist/bigtop/stable/repos/centos6/bigtop.repo
 #Now install the base components
 yum install -y hadoop\* mahout\* hive\* pig\*
 #temp en var for now
 sudo sh -c "cat >> .bashrc" << 'EOF'
-export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.71.x86_64/jre
+export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.71.x86_64/jre  ##have to update to latest version 
 EOF
 source .bashrc
 #init hadoop
